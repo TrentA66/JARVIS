@@ -55,7 +55,7 @@ btn.addEventListener('click', ()=>{
 function takeCommand(message){
     if(message.includes('hey') || message.includes('hello')){
         speak("Hello Sir, How May I Help You?");
-    }
+    }     
     else if(message.includes("open google")){
         window.open("https://google.com", "_blank");
         speak("Opening Google...")
@@ -68,15 +68,12 @@ function takeCommand(message){
         window.open("https://facebook.com", "_blank");
         speak("Opening Facebook...")
     }
-
     else if(message.includes('what is') || message.includes('who is') || message.includes('what are')) {
         window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
         const finalText = "This is what i found on internet regarding " + message;
 	    speak(finalText);
-  
-    }
-
-    else if(message.includes('wikipedia')) {
+    }    
+    else if(message.includes('who is')){
         window.open(`https://en.wikipedia.org/wiki/${message.replace("wikipedia", "")}`, "_blank");
         const finalText = "This is what i found on wikipedia regarding " + message;
         speak(finalText);
@@ -98,11 +95,10 @@ function takeCommand(message){
         window.open('Calculator:///')
         const finalText = "Opening Calculator";
         speak(finalText);
-    }
-
+    }         
     else {
-        window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
-        const finalText = "I found some information for " + message + " on google";
-        speak(finalText);
+    window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
+    const finalText = "I found some information for " + message + " on google";
+    speak(finalText);
     }
-}
+}    
